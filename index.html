@@ -1,0 +1,605 @@
+<!-- **Credits**: Astral template by HTML5 UP | html5up.net | aj@lkn.io | @ajlkn -->
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>wong-ja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<div id="admin-controls">
+			<button id="login-btn" title="Admin Login" onclick="login()"><i class="fas fa-star"></i></button>
+			<button id="logout-btn" title="Logout" onclick="logout()" style="display:none"><i class="fas fa-leaf"></i></button>
+		</div>
+							<div id="star-container" style="
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								border-radius: 18px;
+								padding: 2.5rem 1rem;
+								max-width: 100%;
+								/* margin: 2rem auto; */
+								position: relative;
+								overflow: hidden;
+							">
+							<canvas id="star-bg-canvas" 
+								style="
+									position: absolute;
+									inset: 0;
+									width: 100%;
+									height: 100%;
+									border-radius: 18px;
+									z-index: 0;
+									pointer-events: none;
+									display: block;
+							"></canvas>
+							<div style="position: relative; z-index: 1;">
+
+		<!-- Wrapper-->
+			<div id="wrapper">
+
+				<!-- Nav -->
+					<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#projects" class="icon solid fa-folder"><span>Projects</span></a>
+						<a href="#work" class="icon solid fa-code"><span>Work</span></a>
+						<a href="#contact" class="icon solid fa-envelope"><span>Contact</span></a>
+						<a href="#other" class="icon"><i class="fab fa-superpowers"></i><span>Other</span></a>
+					</nav>
+
+
+
+				<!-- Main -->
+					<div id="main">
+						<!-- me -->
+						<article id="home" class="panel intro">
+							
+							<div id="star-container" style="
+								display: flex;
+								flex-direction: column;
+								align-items: center;
+								border-radius: 18px;
+								padding: 2rem 1rem;
+								max-width: 100%;
+								margin: 1.5rem auto;
+								position: relative;
+								overflow: hidden;
+							">
+
+
+								<div style="
+									display: flex;
+									flex-wrap: wrap;
+									align-items: flex-start;
+									background: #f9fafc;
+									border-radius: 18px;
+									box-shadow: 0 4px 4px rgba(0,0,0,0.06);
+									padding: 2.5rem 2rem;
+									max-width: 900px;
+									margin: 1.5rem auto;
+									gap: 2rem;
+								">
+									<!-- 1. profile img -->
+									<div style="flex: 0 0 220px; display: flex; justify-content: center; align-items: center;">
+										<img src="images/dream.webp" alt="Profile photo"
+											style="width: 180px; height: 180px; object-fit: cover; border-radius: 50%; border: 4px solid #e4e8ee; box-shadow: 0 2px 8px rgba(0,0,0,0.07);" />
+									</div>
+									<!-- 2. me -->
+									<div style="flex: 1 1 0; min-width: 320px;">
+										<h2 style="margin: 0 0 0.4em 0; font-size: 2rem; font-weight: 700; color: #222e3a;">
+											Hello, I'm Juana!
+										</h2>
+										<a href="https://github.com/wong-ja" style="color: #375a7f; font-size: 0.9em; font-weight: 100; text-decoration: none;">
+											@wong-ja
+										</a>
+										<p style="font-size: 1.12rem; color: #4a5568; line-height: 1.6; padding-top: 10px">
+											I’m a Computer Science undergrad at CCNY, feeling my way through data science, analytics, 
+											and web & android development. I enjoy reading & visiting parks and museums when I'm offline.
+											I like Typescript and C++! 
+											<br></br>
+											Here you’ll find my projects, experiences, skills, and the technologies I enjoy working with.
+										</p>
+									</div>
+								</div>
+
+								<!-- tech -->
+								<div class="badge-card-row" style="width: 100%; margin-top: 1.5rem;">
+									<!-- languages -->
+									<div class="badge-card">
+										<div class="badge-card-title">
+											&nbsp; Programming Languages
+											<p>🖥️</p>
+										</div>
+										<div class="badge-badges">
+											<img src="https://img.shields.io/badge/C++-hsl(210,10%25,70%25)?style=for-the-badge&logo=c%2B%2B&logoColor=black" alt="C++" />
+											<img src="https://img.shields.io/badge/Python-hsl%28216%2C60%25%2C70%25%29?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+											<img src="https://img.shields.io/badge/SQL-hsl%28210%2C10%25%2C70%25%29?style=for-the-badge&logo=sqlite&logoColor=black" alt="SQL" />
+											<img src="https://img.shields.io/badge/TypeScript-hsl%28210%2C70%25%2C70%25%29?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+											<img src="https://img.shields.io/badge/JavaScript-hsl%2854%2C90%25%2C70%25%29?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+											<img src="https://img.shields.io/badge/CSS-B8D0FF?style=for-the-badge&logo=css&logoColor=white" alt="CSS" />
+											<img src="https://img.shields.io/badge/Tailwind%20CSS-B8FFF9?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4" alt="Tailwind CSS" />
+											<img src="https://img.shields.io/badge/HTML5-hsl%2814%2C70%25%2C68%25%29?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+										</div>
+									</div>
+
+									<!-- data analysis & vizz -->
+									<div class="badge-card">
+										<div class="badge-card-title">
+											Data Analysis &amp; Data Science
+											<p>📊</p>
+										</div>
+										<div class="badge-badges">
+											<img src="https://img.shields.io/badge/Pandas-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=pandas&logoColor=black" alt="Pandas" />
+											<img src="https://img.shields.io/badge/NumPy-hsl%28210%2C50%25%2C70%25%29?style=for-the-badge&logo=numpy&logoColor=black" alt="NumPy" />
+											<img src="https://img.shields.io/badge/Seaborn-hsl%28150%2C40%25%2C70%25%29?style=for-the-badge&logo=seaborn&logoColor=black" alt="Seaborn" />
+											<img src="https://img.shields.io/badge/Matplotlib-hsl%28210%2C40%25%2C70%25%29?style=for-the-badge&logo=matplotlib&logoColor=black" alt="Matplotlib" />
+											<img src="https://img.shields.io/badge/scikit--learn-hsl%2830%2C80%25%2C70%25%29?style=for-the-badge&logo=scikit-learn&logoColor=black" alt="scikit-learn" />
+											<img src="https://img.shields.io/badge/Jupyter_Notebooks-hsl%2830%2C80%25%2C70%25%29?style=for-the-badge&logo=jupyter&logoColor=black" alt="Jupyter Notebooks" />
+											<img src="https://img.shields.io/badge/Power%20BI-hsl%2845%2C90%25%2C70%25%29?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
+											<img src="https://img.shields.io/badge/PyTorch-FF6F61?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
+											<img src="https://img.shields.io/badge/torchvision-F9C9D5?style=for-the-badge&logo=pytorch&logoColor=white" alt="torchvision" />
+											<img src="https://img.shields.io/badge/statsmodels-A3C1AD?style=for-the-badge&logo=python&logoColor=white" alt="statsmodels" />
+										</div>
+									</div>
+
+									<!-- db & BI & office -->
+									<div class="badge-card">
+										<div class="badge-card-title">
+											Databases &amp; Office Tools
+											<p>🗃️</p>
+										</div>
+										<div class="badge-badges">
+											<img src="https://img.shields.io/badge/MS%20Excel-hsl(120,40%25,70%25)?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="MS Excel" />
+											<img src="https://img.shields.io/badge/Supabase-hsl(160,80%25,90%25)?style=for-the-badge&logo=supabase&logoColor=hsl(160,60%25,40%25)" alt="Supabase" />
+											<img src="https://img.shields.io/badge/Prisma-E0E7FF?style=for-the-badge&logo=prisma&logoColor=3982CE" alt="Prisma" />
+											<img src="https://img.shields.io/badge/Postgres-hsl%28215%2C60%25%2C70%25%29?style=for-the-badge&logo=postgresql&logoColor=white" alt="Postgres" />
+											<img src="https://img.shields.io/badge/Microsoft%20Office-hsl%2814%2C70%25%2C68%25%29?style=for-the-badge&logo=microsoftoffice&logoColor=white" alt="Microsoft Office" />
+											<img src="https://img.shields.io/badge/Google%20Workspace-hsl%28120%2C40%25%2C70%25%29?style=for-the-badge&logo=googleworkspace&logoColor=black" alt="Google Workspace" />
+										</div>
+									</div>
+
+									<!-- collab, version control, IDEs -->
+									<div class="badge-card">
+										<div class="badge-card-title">
+											Collaboration, Version Control &amp; IDEs
+											<p>🤝</p>
+										</div>
+										<div class="badge-badges">
+											<img src="https://img.shields.io/badge/Git-FFE5B4?style=for-the-badge&logo=git&logoColor=F05032" alt="Git" />
+											<img src="https://img.shields.io/badge/GitHub-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />
+											<img src="https://img.shields.io/badge/Discord-B9F6CA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+											<img src="https://img.shields.io/badge/Slack-hsl%28270%2C50%25%2C80%25%29?style=for-the-badge&logo=slack&logoColor=hsl%28270%2C60%25%2C40%25%29" alt="Slack" />
+											<img src="https://img.shields.io/badge/Trello-hsl%28204%2C60%25%2C80%25%29?style=for-the-badge&logo=trello&logoColor=hsl%28204%2C70%25%2C40%25%29" alt="Trello" />
+											<img src="https://img.shields.io/badge/Figma-FDEBFF?style=for-the-badge&logo=figma&logoColor=9B5DE5" alt="Figma" />
+											<img src="https://img.shields.io/badge/VS%20Code-hsl%28210%2C70%25%2C70%25%29?style=for-the-badge&logo=visual-studio-code&logoColor=black" alt="VS Code" />
+										</div>
+									</div>
+								</div>
+
+							</article>
+
+
+
+
+							<!-- work -->
+							<article id="work" class="panel">
+								<header>
+									<h2>Work Experience</h2>
+								</header>
+										<section class="folder-section">
+										<div class="folder-row">
+											<!-- e1 -->
+											<div class="folder experience">
+												<div class="folder-content">
+													<h4>Butterfly Mimicry
+														<span class="read-more" style="margin-left: 30%; text-decoration: none;">
+															<a href="404" style="text-decoration: none;">
+																<img src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000" alt="Link to Github project" style="height: 10%; width: 10%;">
+															</a>
+															<a href="404" style="font-size: 0.9em; font-weight: 100; text-decoration: none; height: 10%; width: 10%;">
+																<img src="https://img.icons8.com/?size=100&id=ShxmdGrBKyPw&format=png&color=000000" alt="Link to deployed site" style="height: 10%; width: 10%;">
+															</a>
+														</span>
+														<p>The Lohman Laboratory, The City College of New York</p>
+													</h4>
+													<p>
+														Fullstack web development enabling CRUD operations on academic data, integrating multiple related tables with efficient handling of taxonomic, geographic, and mimetic information for ~20,000 butterfly records.
+													</p>
+													<div class="tech-stack">
+														<img src="https://img.shields.io/badge/TypeScript-B8D0FF?style=for-the-badge&logo=typescript&logoColor=3178C6" alt="TypeScript" />
+														<img src="https://img.shields.io/badge/Tailwind_CSS-B8FFF9?style=for-the-badge&logo=tailwindcss&logoColor=06B6D4" alt="Tailwind CSS" />
+														<img src="https://img.shields.io/badge/JavaScript-FFFACD?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
+														<img src="https://img.shields.io/badge/React-B8FFF9?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+														<img src="https://img.shields.io/badge/Next.js-E0FBFC?style=for-the-badge&logo=next.js&logoColor=000000" alt="Next.js" />
+														<img src="https://img.shields.io/badge/NextAuth-F1F7ED?style=for-the-badge&logo=nextdotjs&logoColor=000000" alt="NextAuth" />
+														<img src="https://img.shields.io/badge/PostgreSQL-BEE1E6?style=for-the-badge&logo=postgresql&logoColor=336791" alt="PostgreSQL" />
+														<img src="https://img.shields.io/badge/Prisma-FFE5EC?style=for-the-badge&logo=prisma&logoColor=2D3748" alt="Prisma ORM" />
+														<img src="https://img.shields.io/badge/Vercel-E0FBFC?style=for-the-badge&logo=vercel&logoColor=000000" alt="Vercel" />
+														<img src="https://img.shields.io/badge/Figma-F6C6EA?style=for-the-badge&logo=figma&logoColor=9B5DE5" alt="Figma" />
+													</div>
+
+												</div>
+											</div>
+											<!-- e2 -->
+											
+										</div>
+									</section>
+							</article>
+
+							<!-- Projects -->
+							<article id="projects" class="panel">
+								<header>
+									<h2>Projects</h2>
+								</header>
+									<section class="folder-section">
+										<div class="folder-row">
+											<!-- p1 -->
+											<div class="folder project">
+												<div class="folder-content">
+													<h4>Adding soon!
+														<span class="read-more" style="margin-left: 30%; text-decoration: none;">
+															<a href="404" style="text-decoration: none;">
+																<img src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000" alt="Link to Github project" style="height: 10%; width: 10%;">
+															</a>
+															<a href="404" style="font-size: 0.9em; font-weight: 100; text-decoration: none; height: 10%; width: 10%;">
+																<img src="https://img.icons8.com/?size=100&id=ShxmdGrBKyPw&format=png&color=000000" alt="Link to deployed site" style="height: 10%; width: 10%;">
+															</a>
+														</span>
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum, placeat.</p>
+													</h4>
+													<p>
+														Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto praesentium aliquid nam quod tempora ab possimus veniam delectus explicabo magnam.
+													</p>
+													<div class="tech-stack">
+														<img src="https://img.shields.io/badge/AWS-hsl(40,80%25,90%25)?style=for-the-badge&logo=amazonaws&logoColor=hsl(40,60%25,40%25)" alt="AWS" />
+														<img src="https://img.shields.io/badge/Docker-hsl(210,80%25,90%25)?style=for-the-badge&logo=docker&logoColor=hsl(210,60%25,40%25)" alt="Docker" />
+													</div>
+												</div>
+											</div>
+
+											<!-- p2 -->
+											<div class="folder project">
+												<div class="folder-content">
+													<h4>Adding soon!
+														<span class="read-more" style="margin-left: 30%; text-decoration: none;">
+															<a href="404" style="text-decoration: none;">
+																<img src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000" alt="Link to Github project" style="height: 10%; width: 10%;">
+															</a>
+															<a href="404" style="font-size: 0.9em; font-weight: 100; text-decoration: none; height: 10%; width: 10%;">
+																<img src="https://img.icons8.com/?size=100&id=ShxmdGrBKyPw&format=png&color=000000" alt="Link to deployed site" style="height: 10%; width: 10%;">
+															</a>
+														</span>
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, blanditiis.</p>
+													</h4>
+													<p>
+														Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magni pariatur non reprehenderit voluptatum officiis? Excepturi, dolores. Expedita, unde beatae.
+													</p>
+													<div class="tech-stack">
+														<img src="https://img.shields.io/badge/AWS-hsl(40,80%25,90%25)?style=for-the-badge&logo=amazonaws&logoColor=hsl(40,60%25,40%25)" alt="AWS" />
+														<img src="https://img.shields.io/badge/Docker-hsl(210,80%25,90%25)?style=for-the-badge&logo=docker&logoColor=hsl(210,60%25,40%25)" alt="Docker" />
+													</div>
+												</div>
+											</div>
+
+											<!-- p3 -->
+											<div class="folder project">
+												<div class="folder-content">
+													<h4>Adding soon!
+														<span class="read-more" style="margin-left: 30%; text-decoration: none;">
+															<a href="404" style="text-decoration: none;">
+																<img src="https://img.icons8.com/?size=100&id=62856&format=png&color=000000" alt="Link to Github project" style="height: 10%; width: 10%;">
+															</a>
+															<a href="404" style="font-size: 0.9em; font-weight: 100; text-decoration: none; height: 10%; width: 10%;">
+																<img src="https://img.icons8.com/?size=100&id=ShxmdGrBKyPw&format=png&color=000000" alt="Link to deployed site" style="height: 10%; width: 10%;">
+															</a>
+														</span>
+														<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, ipsum.</p>
+													</h4>
+													<p>
+														Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio inventore fugiat veniam obcaecati tempora ullam adipisci sit tempore magnam! Ut.
+													</p>
+													<div class="tech-stack">
+														<img src="https://img.shields.io/badge/AWS-hsl(40,80%25,90%25)?style=for-the-badge&logo=amazonaws&logoColor=hsl(40,60%25,40%25)" alt="AWS" />
+														<img src="https://img.shields.io/badge/Docker-hsl(210,80%25,90%25)?style=for-the-badge&logo=docker&logoColor=hsl(210,60%25,40%25)" alt="Docker" />
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									</section>
+							</article>
+
+
+						<!-- Contact -->
+							<article id="contact" class="panel">
+								<header>
+									<h2>Contact Me?</h2>
+								</header>
+								<form id="contact-form">
+									<input type="text" name="website" style="display:none" autocomplete="off">
+									<span id="form-feedback"></span>
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<input type="text" name="name" placeholder="Name" />
+											</div>
+											<div class="col-6 col-12-medium">
+												<input type="text" name="email" placeholder="Email" />
+											</div>
+											<div class="col-12">
+												<input type="text" name="subject" placeholder="Subject" />
+											</div>
+											<div class="col-12">
+												<textarea name="message" placeholder="Message" rows="6"></textarea>
+											</div>
+											<div class="col-12">
+												<input type="submit" value="Send Message" />
+											</div>
+										</div>
+									</div>
+								</form>
+
+								<!-- Guestbook/messages -->
+								<div id="messages"></div>
+
+								<!-- Site Analytics -->
+								<div id="analytics"></div>
+							</article>
+
+
+							<article id="other" class="panel">
+								<header>
+								</header>
+								<div>
+									<p>
+										Certifications
+									</p>
+
+
+									<p>
+										professional interests
+									</p>
+
+
+
+									<p>
+										miscellaneous interests - books, songs
+									</p>
+								</div>
+									<img src="images/crab.png" alt="" style="display: block; margin-left: auto; margin-right: auto; max-width:50px; max-height:50px;" />
+							</article>
+					</div>
+
+				<!-- Footer -->
+					<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Juana Wong 2025</li>
+							<li>Modified for personal use: 
+								<a href="http://html5up.net" style="text-decoration: none;">
+									Astral template by HTML5 UP
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				<!-- star -->
+				</div>
+				</div>
+			</div>
+
+
+
+		<!-- Scripts -->
+			<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+			
+			<script>
+				const SUPABASE_URL = 'https://mmppxwhtzpzzcqmispod.supabase.co';
+				const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tcHB4d2h0enB6emNxbWlzcG9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk0NTcyNDgsImV4cCI6MjA2NTAzMzI0OH0.oaYrJUTfYdV-z40mFUuz54cIGDxQzC-brxCH5CP7TC0';
+				const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+				supabase.auth.getSession().then(() => {
+					if (/^#[A-Za-z0-9\-_]+$/.test(window.location.hash)) {
+						$(window.location.hash).doSomething();
+					}
+					if (window.location.hash && window.location.hash.startsWith('#access_token=')) {
+						history.replaceState(null, '', window.location.pathname + window.location.search);
+					}
+				});
+
+				const ADMIN_GITHUB_USERNAME = 'wong-ja';
+
+				async function login() {
+					const { error } = await supabase.auth.signInWithOAuth({ provider: 'github' });
+					if (error) alert('Login failed' + error.message);
+				}
+
+				async function logout() {
+					await supabase.auth.signOut();
+					location.reload();
+				}
+
+				async function loadMessages() {
+					const { data, error } = await supabase
+						.from('astral-messages')
+						.select('*')
+						.order('created_at', { ascending: false });
+					if (error) {
+						document.getElementById('messages').innerText = "Error loading messages.";
+						return;
+					}
+					document.getElementById('messages').innerHTML = data.map(msg => `
+						<div class="msg">
+						<b>${msg.name}</b> <em>${msg.subject}</em><br>
+						${msg.message}<br>
+						<small>${new Date(msg.created_at).toLocaleString()}</small>
+						<span class="admin-controls" data-id="${msg.id}" style="display:none">
+							<button onclick="deleteMessage(${msg.id})">Delete</button>
+						</span>
+						</div>
+					`).join('');
+					showAdminControls();
+				}
+				window.loadMessages = loadMessages;
+				loadMessages();
+
+				function showFeedback(msg, isError) {
+					const el = document.getElementById('form-feedback');
+					el.innerText = msg;
+					el.style.color = isError ? 'red' : 'green';
+				}
+
+				document.getElementById('contact-form').addEventListener('submit', async function(e) {
+					e.preventDefault();
+					const form = e.target;
+					if (form.website.value) return; // honeypot silently block bots
+
+					if (!form.name.value || !form.email.value || !form.subject.value || !form.message.value) {
+						showFeedback('All fields are required.', true); return;
+					}
+					if (!/\S+@\S+\.\S+/.test(form.email.value)) {
+						showFeedback('Please enter a valid email.', true); return;
+					}
+					
+
+					// TODO: add Google reCAPTCHA
+
+					const { error } = await supabase
+						.from('astral-messages')
+						.insert([{
+							name: form.name.value,
+							email: form.email.value,
+							subject: form.subject.value,
+							message: form.message.value
+						}]);
+						if (error) {
+							showFeedback('Error sending message. Please try again.', true);
+						} else {
+							showFeedback('Message sent! Thank you.');
+							form.reset();
+							loadMessages();
+						}
+				});
+
+					async function showAdminControls() {
+						const { data: { session } } = await supabase.auth.getSession();
+						const isAdmin = session &&
+							session.user &&
+							session.user.user_metadata &&
+							session.user.user_metadata.user_name === ADMIN_GITHUB_USERNAME;
+
+						document.getElementById('login-btn').style.display = isAdmin ? 'none' : '';
+						document.getElementById('logout-btn').style.display = isAdmin ? '' : 'none';
+						document.querySelectorAll('.admin-controls').forEach(e => e.style.display = isAdmin ? '' : 'none');
+					}
+
+					// delete messages
+					async function deleteMessage(id) {
+						if (!confirm('Delete this message?')) return;
+						await supabase.from('astral-messages').delete().eq('id', id);
+						loadMessages();
+					}
+
+					// track analytics/visits
+					supabase.from('site_analytics').insert([{ event: 'visit', page: location.pathname }]);
+					async function loadAnalytics() {
+						const { data, error } = await supabase.from('site_analytics').select('page');
+						if (error) {
+							document.getElementById('analytics').innerText = "Error loading analytics.";
+							return;
+						}
+						const counts = {};
+						data.forEach(row => {
+							counts[row.page] = (counts[row.page] || 0) + 1;
+						});
+						document.getElementById('analytics').innerHTML = Object.entries(counts)
+							.map(([page, count]) => `<div>${page}: ${count}</div>`)
+							.join('');
+					}
+				loadMessages();
+				loadAnalytics();
+				showAdminControls();
+			</script>
+
+			
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<script>
+				function setupStarfield() {
+					const container = document.getElementById('star-container');
+					const canvas = document.getElementById('star-bg-canvas');
+					const ctx = canvas.getContext('2d');
+					const SPEED_FACTOR = 1.5;
+
+					let width = container.clientWidth;
+					let height = container.clientHeight;
+					let STAR_COUNT = 500;
+					let stars = [];
+					let mouseX = width / 2, mouseY = height / 2;
+					let speedX = 0.2, speedY = 0.1;
+
+					function resizeCanvas() {
+						width = container.clientWidth;
+						height = container.clientHeight;
+						canvas.width = width;
+						canvas.height = height;
+						stars = [];
+						for (let i = 0; i < STAR_COUNT; i++) {
+							stars.push({
+								x: Math.random() * width,
+								y: Math.random() * height,
+								size: 0.7 + Math.random() * 0.8, // px
+								depth: 0.2 + Math.random() * 0.8
+							});
+						}
+					}
+
+					resizeCanvas();
+					window.addEventListener('resize', resizeCanvas);
+
+					let latestMouse = {x: width / 2, y: height / 2}; // mouse where?
+					container.addEventListener('mousemove', e => {
+							const rect = container.getBoundingClientRect();
+							latestMouse.x = e.clientX - rect.left;
+							latestMouse.y = e.clientY - rect.top;
+					});
+
+					// update direction every 5s
+					setTimeout(() => {
+							setInterval(() => {
+							speedX = ((latestMouse.x) - width / 2) / width * 2;
+							speedY = ((latestMouse.y) - height / 2) / height * 2;
+							}, 0);
+					}, 5000);
+
+					function animate() {
+						ctx.clearRect(0, 0, width, height);
+						for (let star of stars) {
+							star.x += speedX * star.depth * SPEED_FACTOR;
+							star.y += speedY * star.depth * SPEED_FACTOR;
+							// infinite stars effect
+							if (star.x < 0) star.x += width;
+							if (star.x > width) star.x -= width;
+							if (star.y < 0) star.y += height;
+							if (star.y > height) star.y -= height;
+							ctx.beginPath();
+							ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+							ctx.fillStyle = "rgba(255,255,255,0.85)";
+							ctx.fill();
+						}
+						requestAnimationFrame(animate);
+					}
+					animate();
+				}
+				
+				window.addEventListener('DOMContentLoaded', setupStarfield);
+			</script>
+
+	</body>
+</html>
