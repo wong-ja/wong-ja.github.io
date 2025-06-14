@@ -69,7 +69,7 @@ input, select, textarea {
 /* Contact Form - Row */
 
 #contact {
-	transform: scale(0.7);
+	transform: scale(0.75);
 
 }
 
@@ -1555,43 +1555,6 @@ input, select, textarea {
 
 		}
 
-/* Image */
-
-	.image {
-		display: inline-block;
-	}
-
-		.image img {
-			display: block;
-			width: 100%;
-		}
-
-		.image.fit {
-			display: block;
-			width: 100%;
-		}
-
-		.image.featured {
-			display: block;
-			width: 100%;
-			margin: 0 0 2em 0;
-		}
-
-		.image.left {
-			float: left;
-			margin: 0 2em 2em 0;
-		}
-
-		.image.centered {
-			display: block;
-			margin: 0 0 2em 0;
-		}
-
-			.image.centered img {
-				margin: 0 auto;
-				width: auto;
-			}
-
 /* Button */
 
 	input[type="button"],
@@ -1911,7 +1874,8 @@ input, select, textarea {
 /* Wrapper */
 
 	#wrapper {
-		width: 57em;
+		transform: scale(0.96);
+		width: 70em;
 		margin: 0 auto;
 		min-height: 100vh;
 		max-width: 100%;
@@ -1981,12 +1945,15 @@ input, select, textarea {
 
 		}
 
+
+
+
 /* Main */
 
 	#main {
 		position: relative;
 		overflow: hidden;
-		width: 100%;
+		width: 80%;
 		background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 85%);
 		box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
 		-moz-transition: min-height 0.5s ease-in-out, max-height 0.5s ease-in-out;
@@ -2193,11 +2160,12 @@ input, select, textarea {
 	.badge-card-row {
 		display: flex;
 		flex-direction: row;
-		gap: 1.5rem;
+		gap: 1rem;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: stretch;
 		width: 100%;
+		margin-top: 1.25rem;
 	}
 
 	.badge-card {
@@ -2206,7 +2174,7 @@ input, select, textarea {
 		box-shadow: 0 2px 8px rgba(55,90,127,0.07);
 		padding: 1.3rem 1.2rem;
 		min-width: 220px;
-		max-width: 330px;
+		max-width: 353px;
 		flex: 1 1 220px;
 		display: flex;
 		flex-direction: column;
@@ -2258,12 +2226,12 @@ input, select, textarea {
 
 
 .folder-section {
-	margin-bottom: 3em;
+	margin-bottom: 1.5em;
 }
 
 .folder-section h2 {
 	text-align: left;
-	margin-left: 1.5em;
+	margin-left: 1em;
 	margin-bottom: 1em;
 	color: #444;
 	font-size: 1.5em;
@@ -2274,15 +2242,15 @@ input, select, textarea {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	gap: 1.5em;
+	gap: 1.25em;
 	justify-content: center;
 	/* width: 100%; */
 }
 
-
 /* Folder card */
 .folder {
-	--folder-width: 340px;
+	transform: scale(0.90);
+	--folder-width: 25vw;
 	--folder-height: 240px;
 	width: var(--folder-width);
 	min-height: var(--folder-height);
@@ -2322,7 +2290,7 @@ input, select, textarea {
 
 /* Experience: pastel purple gradient and tab */
 .folder.experience {
-	--folder-gradient: linear-gradient(to bottom, #ccccff 0%, #ffffff 35%, #ffffff 100%);
+	--folder-gradient: linear-gradient(to bottom, #ffcbbc 0%, #ffffff 35%, #ffffff 100%);
 }
 
 /* Project: pastel mint gradient and tab */
@@ -2384,8 +2352,7 @@ input, select, textarea {
 		gap: 1.5em;
 	}
 	.folder {
-		width: 95vw;
-		min-width: 0;
+		width: 100vw;
 		max-width: 340px;
 		min-height: 240px;
 		box-sizing: border-box;
@@ -2399,15 +2366,53 @@ input, select, textarea {
 		align-items: center;
 	}
 	.folder {
-		width: 98vw;
-		max-width: 360px;
-		min-width: 0;
-		/* height: auto; */
+		width: 100vw;
+		/* max-width: 360px; */
 	}
 }
 
+/* Super Card - Others */
 
 
+	.super-card {
+		background: #e6bdb03d;
+		border-radius: 14px;
+		box-shadow: 0 2px 8px rgba(55, 90, 127, 0.039);
+		padding: 1.3rem 1.2rem;
+		margin: 1.2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		transition: box-shadow 0.2s;
+		width: 100%;
+	}
+
+	.super-card-title {
+		color: #222222;
+		font-weight: 200;
+		margin-bottom: 0.5rem;
+		line-height: 1.35;
+		text-align: center;
+		width: 100%;
+	}
+
+	.cert-image {
+		display: inline-block;
+		height: 25vh;
+		width: 25vw;
+		overflow: hidden;
+		margin-bottom: 0.5rem;
+		padding: 2rem;
+	}
+
+		@media screen and (min-width: 736px) {
+
+			.cert-image img {
+			display: block;
+			width: 100%;
+		}
+
+		}
 
 
 
