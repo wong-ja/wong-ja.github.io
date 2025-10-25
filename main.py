@@ -85,13 +85,13 @@ if tab == 0:
     - **Computer Science, B.S.** | Mathematics minor | [The City College of New York (CCNY)](https://www.ccny.cuny.edu) | Expected December 2025
     """)
 
-    st.markdown("---")
+    # st.markdown("---")
     st.subheader("Fellowships")
     st.markdown("""
     - **Data Science Fellow** | Cohort 11 | [CUNY Tech Prep (CTP)](https://cunytechprep.org/) | July 2025 - Present
     """)
 
-    st.markdown("---")
+    # st.markdown("---")
     st.subheader("Certifications")
     # - Certification 1, Issuing Organization, Date  
     st.markdown("""
@@ -223,9 +223,14 @@ if tab == 5:
 
 
 if tab == 6:
-    st.subheader("About Me")
-    st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ Hello, my name is Juana.")
-    st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
-    st.markdown("I like **reading** & consuming stories. I like visiting parks & **museums**.")
-    st.markdown("Mostly use **YouTube**, so not really on social media.")
+    col1, col2 = st.columns([1,3])
+    with col1:
+        st.image("images/dream.webp")
+    with col2:
+        st.subheader("About Me")
+        st.write("")
+        st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ Hello, my name is Juana.")
+        st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
+        st.markdown("I like **reading** & consuming stories. I like visiting parks & **museums**.")
+        st.markdown("Mostly use **YouTube**, so not really on social media.")
 
