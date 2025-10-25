@@ -3,6 +3,7 @@ from st_social_media_links import SocialMediaIcons
 from st_tabs import TabBar
 from badges import badge_dict
 import pandas as pd
+import json
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 st.markdown(
@@ -108,11 +109,11 @@ if tab == 1:
 
     for _, row in df.iterrows():
         # job title, company, timeframe
-        expander_label = f"{row['JobTitle']} @ **{row['Company']}** 🕰️ {row['StartDate']} - {row['EndDate']}"
+        expander_label = f"{row['JobTitle']} @ **{row['Company']}** __🕰️__ {row['StartDate']} - {row['EndDate']}"
 
         with st.expander(expander_label, expanded=True):
 
-            col1, col2, col3 = st.columns([3, 4, 2])
+            col1, col2, col3 = st.columns([3, 4.5, 1.5])
 
             with col1:
                 st.markdown(f"###### {row['JobTitle']}")
@@ -138,25 +139,46 @@ if tab == 1:
 
 if tab == 2:
     st.subheader("Projects")
-    
-    # st.subheader("Favorite Technologies")
-    # techs = st.multiselect("Search technologies:", ["Python", "Streamlit", "Pandas", "Machine Learning", "SQL"])
-
-
-    # Load projects data from CSV
     df = pd.read_csv("data/projects.csv", sep=";")
-    col1, _, col2 = st.columns([1.5, 0.1, 1.5])
-    with col1:
-        for idx, row in df[:len(df)//2].iterrows():
-            st.subheader(row["title"])
+    
+    techs = st.multiselect(
+        "Search technologies:",
+        options=list(badge_dict.keys()),
+        default=[]
+    )
+    st.write("")
+
+    if techs:
+        df = df[df['technologies'].apply(lambda x: any(t.lower() in x.lower() for t in techs))]
+
+    col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.05, 1, 0.05, 1])
+    columns = [col1, col2, col3]
+
+    for idx, row in df.iterrows():
+        col_idx = idx % 3
+        with columns[col_idx]:
+            # proj title, hyperlink
+            st.markdown(f"#### [{row['title']}]({row['url']})")
+            # image
+            st.image(f"images/{row['image']}", use_container_width=True)
+            # description
             st.write(row["description"])
-            st.image(f"images/{row['image']}")
-            st.markdown(f"[Source Code]({row['url']})")
-    with col2:
-        for idx, row in df[len(df)//2:].iterrows():
-            st.subheader(row["title"])
-            st.write(row["description"])
-            st.image(f"images/{row['image']}")
+            # other/supplemental links
+            if pd.notna(row.get('supplemental_links', None)):
+                try:
+                    supp_links = json.loads(row['supplemental_links'])
+                    for name, link in supp_links.items():
+                        st.markdown(f"[{name}]({link})  ")
+                except json.JSONDecodeError:
+                    st.write("Invalid supplemental links data.")
+            # tech stack
+            if pd.notna(row['technologies']):
+                skills_list = [skill.strip() for skill in row['technologies'].split(',')]
+                badges_html = " ".join(badge_dict.get(skill, "") for skill in skills_list)
+                st.markdown(badges_html, unsafe_allow_html=True)
+
+            st.write("")
+
 
 
 
