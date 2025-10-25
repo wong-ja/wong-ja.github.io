@@ -1,0 +1,2 @@
+JobTitle,Company,Location,StartDate,EndDate,Accomplishments,Skills
+Web Designer / Fullstack Web Developer,The Lohman Laboratory - The City College of New York, New York,Nov 2024,present,"Designed and developed an interactive web application for academic professionals to host, filter, create, insert, and manage (CRUD) comprehensive taxonomic and geographic data on butterfly mimicry for over 19,000 species, supporting professional classification and research workflows. ","TypeScript, JavaScript, React, Next.js, Tailwind CSS, PostgreSQL, Prisma, NextAuth.js, Vercel"
