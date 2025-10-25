@@ -45,7 +45,8 @@ with col1:
         "https://github.com/wong-ja",
         "https://linkedin.com/in/wongjuanaa",
         "https://twitter.com/wong8ja",
-        "wong-ja.github.io"
+        # "wong-ja.github.io",
+        "wong-ja.streamlit.app/"
     ]
 
     colors = ["#f63366", "#6f452eff", "#f63366", "#6f452eff"]
@@ -200,7 +201,8 @@ if tab == 4:
     #     "https://github.com/wong-ja",
     #     "https://linkedin.com/in/wongjuanaa",
     #     "https://twitter.com/wong8ja",
-    #     "wong-ja.github.io"
+    #     "wong-ja.github.io",
+    #     "wong-ja.streamlit.app/"
     # ]
     st.markdown("\n".join([f"- [{link}]({link})" for link in links]), unsafe_allow_html=True)
     st.write("")
