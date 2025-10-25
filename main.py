@@ -27,9 +27,7 @@ badges_comfort = """
 <img src="https://img.shields.io/badge/Pandas-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=pandas&logoColor=black" alt="Pandas" />
 <img src="https://img.shields.io/badge/NumPy-hsl%28210%2C50%25%2C70%25%29?style=for-the-badge&logo=numpy&logoColor=black" alt="NumPy" />
 <img src="https://img.shields.io/badge/Seaborn-hsl%28150%2C40%25%2C70%25%29?style=for-the-badge&logo=seaborn&logoColor=black" alt="Seaborn" />
-<img src="https://img.shields.io/badge/Matplotlib-hsl%28210%2C40%25%2C70%25%29?style=for-the-badge&logo=matplotlib&logoColor=black" alt="Matplotlib" />
 <img src="https://img.shields.io/badge/Jupyter_Notebooks-hsl%2830%2C80%25%2C70%25%29?style=for-the-badge&logo=jupyter&logoColor=black" alt="Jupyter Notebooks" />
-<img src="https://img.shields.io/badge/Power%20BI-hsl%2845%2C90%25%2C70%25%29?style=for-the-badge&logo=powerbi&logoColor=black" alt="Power BI" />
 
 <img src="https://img.shields.io/badge/Git-FFE5B4?style=for-the-badge&logo=git&logoColor=F05032" alt="Git" />
 <img src="https://img.shields.io/badge/GitHub-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />
@@ -58,7 +56,6 @@ with col1:
     st.markdown("NYC-native, book-lover, orange-eater.")
 
 with col3:
-    # st.write("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ _ _ NYC-native _ _ _ book-lover _ _ human _ ")
     st.markdown("""
     CS @ CCNY | CTP Data Science Fellow | Aspiring Data Scientist & Machine Learning Engineer
     """)
@@ -70,7 +67,7 @@ st.markdown("___")
 
 ## -- tabs
 tab = TabBar(
-    tabs=["Education", "Work Experience", "Projects", "Resume", "Miscellaneous"],
+    tabs=["Education", "Work Experience", "Projects", "Resume", "Socials", "Miscellaneous", "About Me"],
     default=0,
     fontSize="18px",
     fontWeight="600",
@@ -184,6 +181,7 @@ if tab == 2:
 
 if tab == 3:
     st.subheader("Resume")
+    st.markdown(">Last updated: July 2025")
     with open("resume.pdf", "rb") as f:
         pdf_bytes = f.read()
         st.pdf(pdf_bytes)
@@ -197,6 +195,21 @@ if tab == 3:
 
 
 if tab == 4:
+    st.subheader("Socials")
+    # links = [
+    #     "https://github.com/wong-ja",
+    #     "https://linkedin.com/in/wongjuanaa",
+    #     "https://twitter.com/wong8ja",
+    #     "wong-ja.github.io"
+    # ]
+    st.markdown("\n".join([f"- [{link}]({link})" for link in links]), unsafe_allow_html=True)
+    st.write("")
+
+    st.markdown("---")
+
+
+
+if tab == 5:
     st.subheader("Miscellaneous")
     st.markdown("---")
 
@@ -204,3 +217,13 @@ if tab == 4:
     st.write("")
 
     st.markdown("---")
+
+
+
+if tab == 6:
+    st.subheader("About Me")
+    st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ Hello, my name is Juana.")
+    st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
+    st.markdown("I like **reading** & consuming stories. I like visiting parks & **museums**.")
+    st.markdown("Mostly use **YouTube**, so not really on social media.")
+
