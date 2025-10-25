@@ -1,11 +1,11 @@
 badge_dict = {
     # Programming Languages
-    "C++": '<img src="https://img.shields.io/badge/C++-hsl(210,10%25,70%25)?style=for-the-badge&logo=c%2B%2B&logoColor=black" alt="C++" />',
+    "C++": '<img src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++" />',
     "Python": '<img src="https://img.shields.io/badge/Python-hsl%28216%2C60%25%2C70%25%29?style=for-the-badge&logo=python&logoColor=white" alt="Python" />',
     "R": '<img src="https://img.shields.io/badge/R-hsl(210,70%25,70%25)?style=for-the-badge&logo=r&logoColor=276DC3" alt="R" />',
     "Java": '<img src="https://img.shields.io/badge/Java-hsl(30,80%25,60%25)?style=for-the-badge&logo=java&logoColor=white" alt="Java" />',
     "JavaScript": '<img src="https://img.shields.io/badge/JavaScript-hsl%2854%2C90%25%2C70%25%29?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />',
-    "TypeScript": '<img src="https://img.shields.io/badge/TypeScript-hsl%28210%2C70%25%2C70%25%29?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />',
+    "TypeScript": '<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />',
     "SQL": '<img src="https://img.shields.io/badge/SQL-hsl%28210%2C10%25%2C70%25%29?style=for-the-badge&logo=sqlite&logoColor=black" alt="SQL" />',
     "Go": '<img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Go" />',
 
@@ -15,6 +15,7 @@ badge_dict = {
     "Angular": '<img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular" />',
     "Svelte": '<img src="https://img.shields.io/badge/Svelte-FF3E00?style=for-the-badge&logo=svelte&logoColor=white" alt="Svelte" />',
     "Tailwind CSS": '<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />',
+    "Tamagui": '<img src="https://img.shields.io/badge/Tamagui-0B0F12?style=for-the-badge&logoColor=white" alt="Tamagui" />',
     "Bootstrap": '<img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap" />',
     "Node.js": '<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />',
     "Express": '<img src="https://img.shields.io/badge/Express-404D59?style=for-the-badge" alt="Express" />',
@@ -29,24 +30,27 @@ badge_dict = {
     "Webpack": '<img src="https://img.shields.io/badge/Webpack-8DD6F9?style=for-the-badge&logo=webpack&logoColor=black" alt="Webpack" />',
     "Babel": '<img src="https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=babel&logoColor=black" alt="Babel" />',
     "GraphQL": '<img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="GraphQL" />',
-    "REST": '<img src="https://img.shields.io/badge/REST-6D6D6D?style=for-the-badge&logo=rest-api&logoColor=white" alt="REST" />',
     "Jest": '<img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white" alt="Jest" />',
+    "React Native Testing Library": '<img src="https://img.shields.io/badge/React%20Native%20Testing%20Library-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native Testing Library" />',
     "ESLint": '<img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint" />',
     "Prettier": '<img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black" alt="Prettier" />',
     "Electron": '<img src="https://img.shields.io/badge/Electron-47848F?style=for-the-badge&logo=electron&logoColor=white" alt="Electron" />',
 
     # Data Science / ML Libraries & Tools
     "Pandas": '<img src="https://img.shields.io/badge/Pandas-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=pandas&logoColor=black" alt="Pandas" />',
-    "NumPy": '<img src="https://img.shields.io/badge/NumPy-hsl%28210%2C50%25%2C70%25%29?style=for-the-badge&logo=numpy&logoColor=black" alt="NumPy" />',
+    "NumPy": '<img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />',
     "SciPy": '<img src="https://img.shields.io/badge/SciPy-hsl(210,50%25,60%25)?style=for-the-badge&logo=scipy&logoColor=black" alt="SciPy" />',
     "Scikit-learn": '<img src="https://img.shields.io/badge/Scikit--learn-005F99?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-learn" />',
     "TensorFlow": '<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" />',
     "Keras": '<img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" alt="Keras" />',
     "PyTorch": '<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />',
+    "Torchvision": '<img src="https://img.shields.io/badge/Torchvision-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="Torchvision" />',
+    "Pillow": '<img src="https://img.shields.io/badge/Pillow-3498DB?style=for-the-badge&logo=python&logoColor=white" alt="Pillow" />',
     "Streamlit": '<img src="https://img.shields.io/badge/Streamlit-E6570D?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit" />',
     "Altair": '<img src="https://img.shields.io/badge/Altair-ff5f2e?style=for-the-badge&logo=apache&logoColor=white" alt="Altair" />',
     "MLflow": '<img src="https://img.shields.io/badge/MLflow-13AA52?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow" />',
     "OpenCV": '<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />',
+    "Pyodbc": '<img src="https://img.shields.io/badge/pyodbc-007ACC?style=for-the-badge&logo=python&logoColor=white" alt="pyodbc" />',
 
     # Visualization
     "Matplotlib": '<img src="https://img.shields.io/badge/Matplotlib-hsl%28210%2C40%25%2C70%25%29?style=for-the-badge&logo=matplotlib&logoColor=black" alt="Matplotlib" />',
@@ -58,12 +62,14 @@ badge_dict = {
     # Databases
     "PostgreSQL": '<img src="https://img.shields.io/badge/Postgres-hsl%28215%2C60%25%2C70%25%29?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />',
     "MySQL": '<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />',
+    "SQL Server": '<img src="https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoftsqlserver&logoColor=white" alt="SQL Server" />',
     "MongoDB": '<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />',
     "Redis": '<img src="https://img.shields.io/badge/Redis-D32D3E?style=for-the-badge&logo=redis&logoColor=white" alt="Redis" />',
     "Supabase": '<img src="https://img.shields.io/badge/Supabase-hsl(160,80%25,90%25)?style=for-the-badge&logo=supabase&logoColor=hsl(160,60%25,40%25)" alt="Supabase" />',
     "Prisma": '<img src="https://img.shields.io/badge/Prisma-E0E7FF?style=for-the-badge&logo=prisma&logoColor=3982CE" alt="Prisma" />',
     "Firebase": '<img src="https://img.shields.io/badge/Firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black" alt="Firebase" />',
     "Firestore": '<img src="https://img.shields.io/badge/Firestore-FFCA28?style=for-the-badge&logo=googlecloud&logoColor=black" alt="Firestore" />',
+    "DuckDB": '<img src="https://img.shields.io/badge/DuckDB-FFF100?style=for-the-badge&logo=duckdb&logoColor=black" alt="DuckDB" />',
 
     # IDEs and Notebooks
     "Jupyter Notebooks": '<img src="https://img.shields.io/badge/Jupyter_Notebooks-hsl%2830%2C80%25%2C70%25%29?style=for-the-badge&logo=jupyter&logoColor=black" alt="Jupyter Notebooks" />',
@@ -73,11 +79,11 @@ badge_dict = {
 
     # Collaboration & Version Control
     "Git": '<img src="https://img.shields.io/badge/Git-FFE5B4?style=for-the-badge&logo=git&logoColor=F05032" alt="Git" />',
-    "GitHub": '<img src="https://img.shields.io/badge/GitHub-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />',
+    "Github": '<img src="https://img.shields.io/badge/GitHub-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />',
     "GitLab": '<img src="https://img.shields.io/badge/GitLab-FCA121?style=for-the-badge&logo=gitlab&logoColor=white" alt="GitLab" />',
     "Bitbucket": '<img src="https://img.shields.io/badge/Bitbucket-205081?style=for-the-badge&logo=bitbucket&logoColor=white" alt="Bitbucket" />',
     "Slack": '<img src="https://img.shields.io/badge/Slack-hsl%28270%2C50%25%2C80%25%29?style=for-the-badge&logo=slack&logoColor=hsl%28270%2C60%25%2C40%25%29" alt="Slack" />',
-    "Discord": '<img src="https://img.shields.io/badge/Discord-B9F6CA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />',
+    "Discord": '<img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />',
     "Trello": '<img src="https://img.shields.io/badge/Trello-hsl%28204%2C60%25%2C80%25%29?style=for-the-badge&logo=trello&logoColor=hsl%28204%2C70%25%2C40%25%29" alt="Trello" />',
 
     # Cloud Platforms
@@ -116,6 +122,9 @@ badge_dict = {
     "Dart": '<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white" alt="Dart" />',
     "React Native": '<img src="https://img.shields.io/badge/React%20Native-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native" />',
     "Expo": '<img src="https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white" alt="Expo" />',
+    "Kotlin": '<img src="https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=Kotlin&logoColor=white" alt="Kotlin" />',
+    "Jetpack Compose": '<img src="https://img.shields.io/badge/Jetpack%20Compose-1A237E?style=for-the-badge&logo=android&logoColor=white&labelColor=1C1F25" alt="Jetpack Compose" />',
+    "Material UI": '<img src="https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white" alt="Material 3" />',
 
     # Other
     "DaVinci Resolve": '<img src="https://img.shields.io/static/v1?style=for-the-badge&message=DaVinci+Resolve&color=233A51&logo=DaVinci+Resolve&logoColor=FFFFFF&label=" alt="DaVinci Resolve" />',
