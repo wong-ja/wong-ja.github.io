@@ -4,6 +4,7 @@ from st_tabs import TabBar
 from badges import badge_dict
 import pandas as pd
 import json
+from spotify import show_spotify_playlist
 
 st.set_page_config(page_title="My Portfolio", layout="wide")
 st.markdown(
@@ -182,7 +183,7 @@ if tab == 2:
 
 if tab == 3:
     st.subheader("Resume")
-    st.markdown(">Last updated: July 2025")
+    st.markdown(">Last updated: October 2025")
     with open("resume.pdf", "rb") as f:
         pdf_bytes = f.read()
         st.pdf(pdf_bytes)
@@ -215,11 +216,21 @@ if tab == 5:
     st.subheader("Miscellaneous")
     st.markdown("---")
 
-    st.markdown(badge_dict, unsafe_allow_html=True)
+    # st.markdown(badge_dict, unsafe_allow_html=True)
     st.write("")
 
-    st.markdown("---")
+    playlist_ids = {
+        "2025" : "3tPSgqZWq4nw7jqE25sHer?si=ac2c7a7abdd74a25",
+        "2024" : "53Nr8oc4a6NjSWIC4bHM10?si=Dk6ko3q_TY-djhjfPdJS3g",
+    }
 
+    cols = st.columns(len(playlist_ids))
+    for col, (year, playlist_id) in zip(cols, playlist_ids.items()):
+        with col:
+            st.write(year)
+            show_spotify_playlist(playlist_id)
+
+    st.markdown("---")
 
 
 if tab == 6:
@@ -227,10 +238,12 @@ if tab == 6:
     with col1:
         st.image("images/dream.webp")
     with col2:
-        st.subheader("About Me")
+        st.subheader("Hello, I'm Juana.")
         st.write("")
-        st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ Hello, my name is Juana.")
         st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
-        st.markdown("I like **reading** & consuming stories. I like visiting parks & **museums**.")
-        st.markdown("Mostly use **YouTube**, so not really on social media.")
+        st.markdown(">“Reading is a conversation. All books talk. But a good book listens as well.” — Mark Haddon")
+        st.write("")
+        st.markdown("**Things I enjoy**: stories, insights & jamming out to my own playlists. I also like visiting parks & museums.")
+        # st.markdown("I mostly use **YouTube**, so I'm not really on social media.")
+        st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ ")
 
