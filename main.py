@@ -156,8 +156,9 @@ if tab == 2:
     for idx, row in df.iterrows():
         col_idx = idx % 3
         with columns[col_idx]:
-            # proj title, hyperlink
+            # proj title, hyperlink, timeframe
             st.markdown(f"#### [{row['title']}]({row['url']})")
+            st.caption(f"{row['timeframe']}")
             # image
             st.image(f"images/{row['image']}", use_container_width=True)
             # description
