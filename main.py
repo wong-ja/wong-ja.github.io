@@ -6,12 +6,14 @@ import pandas as pd
 import json
 from spotify import show_spotify_playlist
 
-st.set_page_config(page_title="My Portfolio", layout="wide")
+st.set_page_config(page_title="Juana Wong | Portfolio", layout="wide")
 st.markdown(
     """
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Sintony&display=swap');
-
+    .block-container {
+        padding-top: 1rem;
+    }
     html, body, [class*="css"] {
         font-family: 'Sintony', sans-serif;
     }
@@ -160,7 +162,7 @@ if tab == 2:
             st.markdown(f"#### [{row['title']}]({row['url']})")
             st.caption(f"{row['timeframe']}")
             # image
-            st.image(f"images/{row['image']}", use_container_width=True)
+            st.image(f"images/{row['image']}", width='stretch')
             # description
             st.write(row["description"])
             # other/supplemental links
