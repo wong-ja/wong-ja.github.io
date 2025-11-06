@@ -51,6 +51,12 @@ badge_dict = {
     "MLflow": '<img src="https://img.shields.io/badge/MLflow-13AA52?style=for-the-badge&logo=mlflow&logoColor=white" alt="MLflow" />',
     "OpenCV": '<img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV" />',
     "Pyodbc": '<img src="https://img.shields.io/badge/pyodbc-007ACC?style=for-the-badge&logo=python&logoColor=white" alt="pyodbc" />',
+    "Hugging Face": '<img src="https://img.shields.io/badge/Hugging%20Face-yellow?style=for-the-badge&logo=huggingface&logoColor=orange" alt="Hugging Face" />',
+    "Gradio": '<img src="https://img.shields.io/badge/Gradio-3E8EFB?style=for-the-badge&logo=gradio&logoColor=white" alt="Gradio" />',
+    "Transformers": '<img src="https://img.shields.io/badge/Transformers-00BFFF?style=for-the-badge&logo=transformers&logoColor=white" alt="Transformers" />',
+    "OpenAI": '<img src="https://img.shields.io/badge/OpenAI-black?style=for-the-badge&logo=openai&logoColor=white" alt="OpenAI" />',
+    "Gemini": '<img src="https://img.shields.io/badge/Gemini-007FFF?style=for-the-badge&logo=google&logoColor=white" alt="Gemini" />',
+    "Claude": '<img src="https://img.shields.io/badge/Claude-4B0082?style=for-the-badge&logo=anthropic&logoColor=white" alt="Claude" />',
 
     # Visualization
     "Matplotlib": '<img src="https://img.shields.io/badge/Matplotlib-hsl%28210%2C40%25%2C70%25%29?style=for-the-badge&logo=matplotlib&logoColor=black" alt="Matplotlib" />',

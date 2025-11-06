@@ -49,10 +49,11 @@ with col1:
         "https://linkedin.com/in/wongjuanaa",
         "https://twitter.com/wong8ja",
         # "wong-ja.github.io",
-        "wong-ja.streamlit.app/"
+        "wong-ja.streamlit.app/",
+        "https://huggingface.co/wong-ja",
     ]
 
-    colors = ["#f63366", "#6f452eff", "#f63366", "#6f452eff"]
+    colors = ["#f63366", "#6f452eff", "#f63366", "#6f452eff", "#f63366"]
     social_media_icons = SocialMediaIcons(links, colors)
     social_media_icons.render()
 
@@ -206,7 +207,8 @@ if tab == 4:
     #     "https://linkedin.com/in/wongjuanaa",
     #     "https://twitter.com/wong8ja",
     #     "wong-ja.github.io",
-    #     "wong-ja.streamlit.app/"
+    #     "wong-ja.streamlit.app/",
+    #     "https://huggingface.co/0jwj0",
     # ]
     st.markdown("\n".join([f"- [{link}]({link})" for link in links]), unsafe_allow_html=True)
     st.write("")
