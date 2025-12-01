@@ -1,10 +1,10 @@
 import streamlit as st
 from st_social_media_links import SocialMediaIcons
-from st_tabs import TabBar
 from badges import badge_dict
 import pandas as pd
 import json
 from spotify import show_spotify_playlist
+import uuid
 
 st.set_page_config(page_title="Juana Wong | Portfolio", layout="wide")
 st.markdown(
@@ -21,22 +21,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-
-
-badges_comfort = """
-<img src="https://img.shields.io/badge/Python-hsl%28216%2C60%25%2C70%25%29?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-<img src="https://img.shields.io/badge/SQL-hsl%28210%2C10%25%2C70%25%29?style=for-the-badge&logo=sqlite&logoColor=black" alt="SQL" />
-
-<img src="https://img.shields.io/badge/Pandas-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=pandas&logoColor=black" alt="Pandas" />
-<img src="https://img.shields.io/badge/NumPy-hsl%28210%2C50%25%2C70%25%29?style=for-the-badge&logo=numpy&logoColor=black" alt="NumPy" />
-<img src="https://img.shields.io/badge/Seaborn-hsl%28150%2C40%25%2C70%25%29?style=for-the-badge&logo=seaborn&logoColor=black" alt="Seaborn" />
-<img src="https://img.shields.io/badge/Jupyter_Notebooks-hsl%2830%2C80%25%2C70%25%29?style=for-the-badge&logo=jupyter&logoColor=black" alt="Jupyter Notebooks" />
-
-<img src="https://img.shields.io/badge/Git-FFE5B4?style=for-the-badge&logo=git&logoColor=F05032" alt="Git" />
-<img src="https://img.shields.io/badge/GitHub-hsl%280%2C0%25%2C85%25%29?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" />
-
-"""
-
 
 ## -- summary
 st.title("Juana Wong")
@@ -58,30 +42,42 @@ with col1:
     social_media_icons.render()
 
     st.write("")
-    st.markdown("NYC-native, book-lover, orange-eater.")
 
 with col3:
     st.markdown("""
-    CS @ CCNY | CTP Data Science Fellow | Aspiring Data Scientist & Machine Learning Engineer
+    CS @ CCNY | CTP Data Science Fellow | Aspiring Data Scientist
     """)
-    st.markdown(badges_comfort, unsafe_allow_html=True)
+    comfort_keys = ["Python", "SQL", "Pandas", "NumPy", "Streamlit", "Jupyter Notebooks", "Git", "Github"]
+    badges_comfort = [badge_dict[k] for k in comfort_keys if k in badge_dict]
+    comfort = " ".join(badges_comfort)
+    st.markdown(comfort, unsafe_allow_html=True)
 
 st.markdown("___")
 
 
 
 ## -- tabs
-tab = TabBar(
-    tabs=["Education", "Work Experience", "Projects", "Resume", "Socials", "Miscellaneous", "About Me"],
-    default=0,
-    fontSize="18px",
-    fontWeight="600",
-    color="#6f452eff",
-    activeColor="#f63366",
-)
+st.markdown("""
+<style>
+.stTabs [data-baseweb="tab-list"] {
+    display: flex;
+    justify-content: space-between;
+}
+.stTabs [data-baseweb="tab"] {
+    flex: 1 1 0;
+    text-align: center;
+}
+.stTabs [data-baseweb="tab-list"] button[data-baseweb="tab"] p {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+tabs = st.tabs(["Education", "Work Experience", "Projects", "Resume", "About Me"])
 
 
-if tab == 0:
+with tabs[0]:
     st.subheader("Education")
     # - Degree 1, Institution, Graduation Year  
     # - Awards, Honors, Scholarships  
@@ -104,7 +100,7 @@ if tab == 0:
 
 
 
-if tab == 1:
+with tabs[1]:
     st.subheader("Work Experience")
     df = pd.read_csv("data/work_experience.csv")
     st.markdown("")
@@ -139,10 +135,10 @@ if tab == 1:
 
 
 
-if tab == 2:
+with tabs[2]:
     st.subheader("Projects")
     df = pd.read_csv("data/projects.csv", sep=";")
-    
+
     techs = st.multiselect(
         "Search technologies:",
         options=list(badge_dict.keys()),
@@ -185,7 +181,7 @@ if tab == 2:
 
 
 
-if tab == 3:
+with tabs[3]:
     st.subheader("Resume")
     st.markdown(">Last updated: October 2025")
     with open("resume.pdf", "rb") as f:
@@ -195,34 +191,27 @@ if tab == 3:
         label="Download Resume PDF",
         data=pdf_bytes,
         file_name="resume.pdf",
-        mime="application/pdf"
+        mime="application/pdf",
+        key=f"download_{uuid.uuid4()}"
     )
 
 
 
-if tab == 4:
-    st.subheader("Socials")
-    # links = [
-    #     "https://github.com/wong-ja",
-    #     "https://linkedin.com/in/wongjuanaa",
-    #     "https://twitter.com/wong8ja",
-    #     "wong-ja.github.io",
-    #     "wong-ja.streamlit.app/",
-    #     "https://huggingface.co/0jwj0",
-    # ]
-    st.markdown("\n".join([f"- [{link}]({link})" for link in links]), unsafe_allow_html=True)
-    st.write("")
+with tabs[4]:
+    col1, spc, col2 = st.columns([1, 0.1, 3])
+    with col1:
+        st.image("images/dream.webp", width='stretch')
+    with col2:
+        st.subheader("Hello, I'm Juana.")
+        st.write("")
+        st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
+        st.markdown(">“” — ")
+        st.write("")
+        st.markdown("**Things I enjoy**: stories, insights & jamming out to my own playlists. I also like visiting parks & museums.")
+        # st.markdown("NYC-native, book-lover, orange-eater.")
+        # st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ ")
 
-    st.markdown("---")
-
-
-
-if tab == 5:
-    st.subheader("Miscellaneous")
-    st.markdown("---")
-
-    # st.markdown(badge_dict, unsafe_allow_html=True)
-    st.write("")
+    st.divider()
 
     playlist_ids = {
         "2025" : "3tPSgqZWq4nw7jqE25sHer?si=ac2c7a7abdd74a25",
@@ -235,20 +224,20 @@ if tab == 5:
             st.write(year)
             show_spotify_playlist(playlist_id)
 
-    st.markdown("---")
+    st.divider()
 
-
-if tab == 6:
-    col1, col2 = st.columns([1,3])
+    col1, col2, col3 = st.columns(3)
     with col1:
-        st.image("images/dream.webp")
-    with col2:
-        st.subheader("Hello, I'm Juana.")
-        st.write("")
-        st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
-        st.markdown(">“Reading is a conversation. All books talk. But a good book listens as well.” — Mark Haddon")
-        st.write("")
-        st.markdown("**Things I enjoy**: stories, insights & jamming out to my own playlists. I also like visiting parks & museums.")
-        # st.markdown("I mostly use **YouTube**, so I'm not really on social media.")
-        st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ ")
+        st.markdown(f"PROMETHEAN - Vol. 52 - Spring 2025")
+        promethean_2025 = "https://drive.google.com/file/d/1KbZCquCkE41d1zrkKXYiaaaANx0v154I/view"
+        promethean_2025_img = "https://images.squarespace-cdn.com/content/v1/5bd619458d97407cf3c1a9cc/1747268121908-5VT9H71E3YNHQZN7H71Z/Promethean+2025+Cover+Image.png?format=1500w"
+        st.markdown(
+            f"""
+            <a href="{promethean_2025}" target="_blank">
+                <img src="{promethean_2025_img}" style="max-width:100%; height:auto;" />
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
 
+    st.markdown("---")
