@@ -276,6 +276,7 @@ with tabs[4]:
     st.subheader("Resume")
     st.markdown(">Last updated: October 2025")
     with open("resume.pdf", "rb") as f:
+        pdf_bytes = f.read()
         base64_pdf = base64.b64encode(f.read()).decode('utf-8')
         pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="600" type="application/pdf"></iframe>'
         st.markdown(pdf_display, unsafe_allow_html=True)
@@ -284,7 +285,7 @@ with tabs[4]:
     with col:
         btn = st.download_button(
             label="Download Resume PDF",
-            data=base64.b64decode(base64_pdf),
+            data=pdf_bytes,
             file_name="resume.pdf",
             mime="application/pdf",
             key=f"download_{uuid.uuid4()}",
