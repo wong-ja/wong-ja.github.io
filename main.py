@@ -124,25 +124,65 @@ with tabs[0]:
 
 
 with tabs[1]:
-    st.subheader("Education")
-    # - Degree 1, Institution, Graduation Year  
-    # - Awards, Honors, Scholarships  
-    st.markdown("""
-    - **Computer Science, B.S.** | Mathematics minor | [The City College of New York (CCNY)](https://www.ccny.cuny.edu) | Expected December 2025
-    """)
+    col1, spc, col2, spc, col3 = st.columns([1, 0.1, 1, 0.1, 1])
+    with col1:
+        st.subheader("Education")
+        # - Degree 1, Institution, Graduation Year  
+        # - Awards, Honors, Scholarships  
+        st.write("")
+        ccny_url = "https://www.ccny.cuny.edu"
+        ccny_img = "https://www.ccny.cuny.edu/sites/default/files/inline-images/Grove%20G%20Logo%20%2B%20CCNY%20Nameplate%204-19.jpg"
+        st.markdown(
+            f"""
+            <a href="{ccny_url}" target="_blank">
+                <img src="{ccny_img}" style="max-width:300px height:auto;" />
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.divider()
+        st.markdown("""
+        **Computer Science, B.S.** \n\n Mathematics minor \n\n Expected December 2025
+        """)
 
-    # st.markdown("---")
-    st.subheader("Fellowships")
-    st.markdown("""
-    - **Data Science Fellow** | Cohort 11 | [CUNY Tech Prep (CTP)](https://cunytechprep.org/) | July 2025 - Present
-    """)
+    with col2:
+        st.subheader("Fellowships")
+        st.write("")
+        ctp_url = "https://cunytechprep.org/"
+        ctp_img = "https://cunytechprep.org/_next/static/media/ctp-logo-square.6a1210b7.png"
+        st.markdown(
+            f"""
+            <a href="{ctp_url}" target="_blank">
+                <img src="{ctp_img}" style="max-width:300px; height:auto;" />
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.divider()
+        st.markdown("""
+        **Data Science Fellow** \n\n Cohort 11 \n\n July 2025 - Present
+        """)
 
-    # st.markdown("---")
-    st.subheader("Certifications")
-    # - Certification 1, Issuing Organization, Date  
-    st.markdown("""
-    - [Intro to Android Development](https://bit.ly/w8jacpand101) | [Codepath](https://www.codepath.org/) | Summer 2025
-    """)
+    with col3:
+        # st.markdown("---")
+        st.subheader("Certifications")
+        # - Certification 1, Issuing Organization, Date  
+        st.write("")
+        st.write("")
+        codepath_url = "https://www.codepath.org/"
+        codepath_img = "https://www.codepath.org/hs-fs/hubfs/logoblack.png?width=1406&height=131&name=logoblack.png"
+        st.markdown(
+            f"""
+            <a href="{codepath_url}" target="_blank">
+                <img src="{codepath_img}" style="max-width:300px; height:auto;" />
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.divider()
+        st.markdown("""
+        [Intro to Android Development](https://drive.google.com/file/d/1UdeHKtmsAjHqIjGjB6Iolis5TndpUGar/view?usp=sharing) \n\n Summer 2025
+        """)
 
 
 
