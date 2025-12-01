@@ -84,7 +84,12 @@ with tabs[0]:
         # st.markdown("CS @ CCNY | CTP Data Science Fellow | Aspiring Data Scientist")
         st.write("")
         st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
-        st.markdown(">“” — ")
+        spc, col, spc = st.columns([1,2,1])
+        with col:
+            lines = ["I look and look", "Looking's a way of being: one becomes", "sometimes, a pair of eyes walking.", "Walking wherever looking takes one."]
+            for line in lines:
+                st.markdown(f'<p style="font-family: Georgia, serif;">{line}</p>', unsafe_allow_html=True)
+            st.markdown(f'<p style="font-family: Georgia, serif; text-align: center;"> — Denise Levertov</p>', unsafe_allow_html=True)
         st.write("")
         st.markdown("**Things I enjoy**: stories, insights & jamming out to my own playlists. I also like visiting parks & museums.")
         # st.markdown("NYC-native, book-lover, orange-eater.")
@@ -103,21 +108,20 @@ with tabs[0]:
             st.write(year)
             show_spotify_playlist(playlist_id)
 
-    st.divider()
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown(f"PROMETHEAN - Vol. 52 - Spring 2025")
-        promethean_2025 = "https://drive.google.com/file/d/1KbZCquCkE41d1zrkKXYiaaaANx0v154I/view"
-        promethean_2025_img = "https://images.squarespace-cdn.com/content/v1/5bd619458d97407cf3c1a9cc/1747268121908-5VT9H71E3YNHQZN7H71Z/Promethean+2025+Cover+Image.png?format=1500w"
-        st.markdown(
-            f"""
-            <a href="{promethean_2025}" target="_blank">
-                <img src="{promethean_2025_img}" style="max-width:100%; height:auto;" />
-            </a>
-            """,
-            unsafe_allow_html=True,
-        )
+    # st.divider()
+    # col1, col2, col3 = st.columns(3)
+    # with col1:
+    #     st.markdown(f"PROMETHEAN - Vol. 52 - Spring 2025")
+    #     promethean_2025 = "https://drive.google.com/file/d/1KbZCquCkE41d1zrkKXYiaaaANx0v154I/view"
+    #     promethean_2025_img = "https://images.squarespace-cdn.com/content/v1/5bd619458d97407cf3c1a9cc/1747268121908-5VT9H71E3YNHQZN7H71Z/Promethean+2025+Cover+Image.png?format=1500w"
+    #     st.markdown(
+    #         f"""
+    #         <a href="{promethean_2025}" target="_blank">
+    #             <img src="{promethean_2025_img}" style="max-width:100%; height:auto;" />
+    #         </a>
+    #         """,
+    #         unsafe_allow_html=True,
+    #     )
 
     st.markdown("---")
 
