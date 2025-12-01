@@ -44,9 +44,6 @@ with col1:
     st.write("")
 
 with col3:
-    st.markdown("""
-    CS @ CCNY | CTP Data Science Fellow | Aspiring Data Scientist
-    """)
     comfort_keys = ["Python", "SQL", "Pandas", "NumPy", "Streamlit", "Jupyter Notebooks", "Git", "Github"]
     badges_comfort = [badge_dict[k] for k in comfort_keys if k in badge_dict]
     comfort = " ".join(badges_comfort)
@@ -74,10 +71,59 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-tabs = st.tabs(["Education", "Work Experience", "Projects", "Resume", "About Me"])
+tabs = st.tabs(["About Me", "Education", "Work Experience", "Projects", "Resume"])
+
 
 
 with tabs[0]:
+    col1, spc, col2 = st.columns([1, 0.1, 3])
+    with col1:
+        st.image("images/dream.webp", width='stretch')
+    with col2:
+        st.subheader("Hello, I'm Juana.")
+        # st.markdown("CS @ CCNY | CTP Data Science Fellow | Aspiring Data Scientist")
+        st.write("")
+        st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
+        st.markdown(">“” — ")
+        st.write("")
+        st.markdown("**Things I enjoy**: stories, insights & jamming out to my own playlists. I also like visiting parks & museums.")
+        # st.markdown("NYC-native, book-lover, orange-eater.")
+        # st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ ")
+    
+    st.divider()
+
+    playlist_ids = {
+        "2025" : "3tPSgqZWq4nw7jqE25sHer?si=ac2c7a7abdd74a25",
+        "2024" : "53Nr8oc4a6NjSWIC4bHM10?si=Dk6ko3q_TY-djhjfPdJS3g",
+    }
+
+    cols = st.columns(len(playlist_ids))
+    for col, (year, playlist_id) in zip(cols, playlist_ids.items()):
+        with col:
+            st.write(year)
+            show_spotify_playlist(playlist_id)
+
+    st.divider()
+
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.markdown(f"PROMETHEAN - Vol. 52 - Spring 2025")
+        promethean_2025 = "https://drive.google.com/file/d/1KbZCquCkE41d1zrkKXYiaaaANx0v154I/view"
+        promethean_2025_img = "https://images.squarespace-cdn.com/content/v1/5bd619458d97407cf3c1a9cc/1747268121908-5VT9H71E3YNHQZN7H71Z/Promethean+2025+Cover+Image.png?format=1500w"
+        st.markdown(
+            f"""
+            <a href="{promethean_2025}" target="_blank">
+                <img src="{promethean_2025_img}" style="max-width:100%; height:auto;" />
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+
+    st.markdown("---")
+
+
+
+with tabs[1]:
     st.subheader("Education")
     # - Degree 1, Institution, Graduation Year  
     # - Awards, Honors, Scholarships  
@@ -100,7 +146,7 @@ with tabs[0]:
 
 
 
-with tabs[1]:
+with tabs[2]:
     st.subheader("Work Experience")
     df = pd.read_csv("data/work_experience.csv")
     st.markdown("")
@@ -135,7 +181,7 @@ with tabs[1]:
 
 
 
-with tabs[2]:
+with tabs[3]:
     st.subheader("Projects")
     df = pd.read_csv("data/projects.csv", sep=";")
 
@@ -181,7 +227,7 @@ with tabs[2]:
 
 
 
-with tabs[3]:
+with tabs[4]:
     st.subheader("Resume")
     st.markdown(">Last updated: October 2025")
     with open("resume.pdf", "rb") as f:
@@ -194,50 +240,3 @@ with tabs[3]:
         mime="application/pdf",
         key=f"download_{uuid.uuid4()}"
     )
-
-
-
-with tabs[4]:
-    col1, spc, col2 = st.columns([1, 0.1, 3])
-    with col1:
-        st.image("images/dream.webp", width='stretch')
-    with col2:
-        st.subheader("Hello, I'm Juana.")
-        st.write("")
-        st.markdown("My technical interests broadly span android development, web development, and **data analytics + data science**.")
-        st.markdown(">“” — ")
-        st.write("")
-        st.markdown("**Things I enjoy**: stories, insights & jamming out to my own playlists. I also like visiting parks & museums.")
-        # st.markdown("NYC-native, book-lover, orange-eater.")
-        # st.markdown("ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧𐦯 _ _ ")
-
-    st.divider()
-
-    playlist_ids = {
-        "2025" : "3tPSgqZWq4nw7jqE25sHer?si=ac2c7a7abdd74a25",
-        "2024" : "53Nr8oc4a6NjSWIC4bHM10?si=Dk6ko3q_TY-djhjfPdJS3g",
-    }
-
-    cols = st.columns(len(playlist_ids))
-    for col, (year, playlist_id) in zip(cols, playlist_ids.items()):
-        with col:
-            st.write(year)
-            show_spotify_playlist(playlist_id)
-
-    st.divider()
-
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.markdown(f"PROMETHEAN - Vol. 52 - Spring 2025")
-        promethean_2025 = "https://drive.google.com/file/d/1KbZCquCkE41d1zrkKXYiaaaANx0v154I/view"
-        promethean_2025_img = "https://images.squarespace-cdn.com/content/v1/5bd619458d97407cf3c1a9cc/1747268121908-5VT9H71E3YNHQZN7H71Z/Promethean+2025+Cover+Image.png?format=1500w"
-        st.markdown(
-            f"""
-            <a href="{promethean_2025}" target="_blank">
-                <img src="{promethean_2025_img}" style="max-width:100%; height:auto;" />
-            </a>
-            """,
-            unsafe_allow_html=True,
-        )
-
-    st.markdown("---")
