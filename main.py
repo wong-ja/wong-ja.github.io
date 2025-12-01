@@ -186,7 +186,7 @@ with tabs[3]:
     st.markdown(">Last updated: October 2025")
     with open("resume.pdf", "rb") as f:
         pdf_bytes = f.read()
-        st.pdf(pdf_bytes)
+        st.pdf(pdf_bytes, height=600)
     btn = st.download_button(
         label="Download Resume PDF",
         data=pdf_bytes,
