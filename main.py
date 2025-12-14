@@ -8,6 +8,7 @@ import uuid
 import base64
 from PIL import Image
 import mimetypes
+import random
 
 st.set_page_config(page_title="Juana Wong | Portfolio", layout="wide")
 st.markdown(
@@ -196,34 +197,128 @@ with tabs[1]:
 with tabs[2]:
     st.subheader("Work Experience")
     df = pd.read_csv("data/work_experience.csv")
-    st.markdown("")
 
-    for _, row in df.iterrows():
-        # job title, company, timeframe
-        expander_label = f"{row['JobTitle']} @ **{row['Company']}** __🕰️__ {row['StartDate']} - {row['EndDate']}"
+    # ------------------ CSS ------------------
+    st.markdown("""
+    <style>
+    .block-container { padding-top: 0 !important; }
 
-        with st.expander(expander_label, expanded=True):
+    .timeline-wrapper {
+        position: relative;
+        width: 85%;
+        margin: 40px auto;
+        padding: 10px 0 20px 0;
+        overflow: visible;
+    }
+    .timeline-line {
+        position: absolute;
+        top: 0; 
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(to bottom, #b7cef5, #e9e4f8);
+        border-radius: 4px;
+        z-index: 0; 
+        opacity: 0.9;
+    }
+    .timeline-item {
+        position: relative;
+        padding: 24px 28px 24px 50px;
+        border-radius: 14px;
+        margin-left: 175px;
+        margin-bottom: 50px;
+        background: rgba(255,255,255,0.8);
+        border-left: 6px solid #b7cef5;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        backdrop-filter: blur(3px);
+        transition: background 0.3s ease;
+        color:#333;
+    }
+    .timeline-item:hover { 
+        background: rgba(255,255,255,0.9); 
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        color: #000;
+    }
+    .timeline-item::before {
+        content: ''; 
+        position: absolute;
+        top: 50%; 
+        left: -187px; 
+        transform: translateY(-50%);
+        width: 14px; 
+        height: 14px;
+        background: #f7a8b8;
+        border: 2px solid #fff; 
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(255,255,255,0.8);
+        z-index: 2;
+    }
+    .job-title { font-size:1.1rem; font-weight:700; margin-bottom:6px; color:#000; }
+    .company { font-style:italic; font-weight:500; margin-bottom:4px; }
+    .location { font-size:0.9rem; }
+    .timeframe { font-size:0.9rem; margin-top:5px; margin-bottom:8px; }
+    .accomplishments ul { margin:0.5em 0 0.5em 1em; padding:0; }
+    .accomplishments li { margin-bottom:4px; }
+    .skill-badges { margin-top:20px; }
 
-            col1, col2, col3 = st.columns([3, 4.5, 1.5])
+    </style>
+    """, unsafe_allow_html=True)
 
-            with col1:
-                st.markdown(f"###### {row['JobTitle']}")
-            with col2:
-                st.markdown(f"*{row['Company']}*")
-            with col3:
-                st.markdown(f"_{row['StartDate']} - {row['EndDate']}_")
+    gradient_themes = [
+        "linear-gradient(135deg,#eefaf0,#f0faff)",
+        "linear-gradient(135deg,#eefaf0,#e9e4f8)",
+        "linear-gradient(135deg,#f0faff,#eefaf0)",
+        "linear-gradient(135deg,#f9f0f4,#e9e4f8)",
+    ]
 
-            # XYZ bullet points
-            if pd.notna(row['Accomplishments']):
-                accomplishments = row['Accomplishments'].split(';')
-                for item in accomplishments:
-                    st.markdown(f"- {item.strip()}")
 
-            # tech stack / skills
-            if pd.notna(row['Skills']):
-                skills_list = [skill.strip() for skill in row['Skills'].split(',')]
-                badges_html = " ".join(badge_dict.get(skill, "") for skill in skills_list)
-                st.markdown(badges_html, unsafe_allow_html=True)
+    html_chunks = []
+    html_chunks.append("<div class='timeline-wrapper'><div class='timeline-line'></div>")
+
+    for i, row in df.iterrows():
+        bg = gradient_themes[i % len(gradient_themes)]
+        job = row.get("JobTitle", "")
+        company = row.get("Company", "")
+        loc = row.get("Location", "")
+        start = row.get("StartDate", "")
+        end = row.get("EndDate", "")
+
+        # accomplishments
+        accomplishments_html = ""
+        if pd.notna(row.get("Accomplishments", "")) and row["Accomplishments"].strip():
+            bullets = [
+                (a.strip() if a.endswith(".") else a.strip() + ".")
+                for a in row["Accomplishments"].split(". ") if a.strip()
+            ]
+            accomplishments_html = (
+                "<div class='accomplishments'><ul>"
+                + "".join(f"<li>{a}</li>" for a in bullets)
+                + "</ul></div>"
+            )
+
+        # skills w/ badge_dict
+        skills_html = ""
+        if pd.notna(row.get("Skills", "")) and row["Skills"].strip():
+            skills = [s.strip() for s in row["Skills"].split(",") if s.strip()]
+            badges_html = " ".join(badge_dict.get(s, f"<span>{s}</span>") for s in skills)
+            skills_html = f"<div class='skill-badges'>{badges_html}</div>"
+
+        # cards
+        html_chunks.append(
+            f"<div class='timeline-item' style='background:{bg};'>"
+            f"<div class='job-title'>{job} 🌿</div>"
+            f"<div class='company'>{company}</div>"
+            f"<div class='location'>🌐 {loc}</div>"
+            f"<div class='timeframe'>🕰️ {start} – {end}</div>"
+            f"{accomplishments_html}{skills_html}</div>"
+        )
+
+    # close wrapper
+    html_chunks.append("</div>")
+    timeline_html = "".join(html_chunks)
+    st.markdown(timeline_html, unsafe_allow_html=True)
+
+
+
 
 
 def image_to_base64(image_path):
