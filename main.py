@@ -266,7 +266,7 @@ with tabs[3]:
                 badges_html = " ".join(badge_dict.get(skill, "") for skill in skills_list)
                 st.markdown(badges_html, unsafe_allow_html=True)
 
-            st.write("")
+            st.divider()
 
 
 
