@@ -5,6 +5,9 @@ import pandas as pd
 import json
 from spotify import show_spotify_playlist
 import uuid
+import base64
+from PIL import Image
+import mimetypes
 
 st.set_page_config(page_title="Juana Wong | Portfolio", layout="wide")
 st.markdown(
@@ -223,6 +226,14 @@ with tabs[2]:
                 st.markdown(badges_html, unsafe_allow_html=True)
 
 
+def image_to_base64(image_path):
+    mime_type, _ = mimetypes.guess_type(image_path)
+    if mime_type is None:
+        mime_type = 'image/png'
+    with open(image_path, "rb") as f:
+        image_bytes = f.read()
+    encoded = base64.b64encode(image_bytes).decode()
+    return f"data:{mime_type};base64,{encoded}"
 
 
 with tabs[3]:
@@ -249,7 +260,13 @@ with tabs[3]:
             st.markdown(f"#### [{row['title']}]({row['url']})")
             st.caption(f"{row['timeframe']}")
             # image
-            st.image(f"images/{row['image']}", width='stretch')
+            with st.container():
+                image_b64 = image_to_base64(f"images/{row['image']}")
+                st.markdown(f'''
+                            <div style="display: flex; justify-content: center;">
+                            <img src="{image_b64}" style="max-height: 200px; width: auto;">
+                            </div>
+                ''', unsafe_allow_html=True)
             # description
             st.write(row["description"])
             # other/supplemental links
