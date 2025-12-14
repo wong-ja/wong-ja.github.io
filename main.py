@@ -294,7 +294,7 @@ with tabs[4]:
 
     with open("resume.pdf", "rb") as f:
         pdf_bytes = f.read()
-        st.pdf(pdf_bytes, height=650)
+        st.pdf(pdf_bytes)
     spc, col, spc = st.columns([1,1,1])
     with col:
         btn = st.download_button(
