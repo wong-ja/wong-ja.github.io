@@ -16,7 +16,7 @@ st.markdown(
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Sintony&display=swap');
     .block-container {
-        padding-top: 1rem;
+        padding-top: 2rem;
     }
     html, body, [class*="css"] {
         font-family: 'Sintony', sans-serif;
@@ -198,11 +198,8 @@ with tabs[2]:
     st.subheader("Work Experience")
     df = pd.read_csv("data/work_experience.csv")
 
-    # ------------------ CSS ------------------
     st.markdown("""
     <style>
-    .block-container { padding-top: 0 !important; }
-
     .timeline-wrapper {
         position: relative;
         width: 85%;
