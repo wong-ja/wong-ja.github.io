@@ -80,6 +80,7 @@ badge_dict = {
 
     # IDEs and Notebooks
     "Jupyter Notebooks": '<img src="https://img.shields.io/badge/Jupyter_Notebooks-hsl%2830%2C80%25%2C70%25%29?style=for-the-badge&logo=jupyter&logoColor=black" alt="Jupyter Notebooks" />',
+    "Google Colab": '<img src="https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=google-colab&logoColor=white" alt="Google Colab" />',
     "VS Code": '<img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="VS Code" />',
     "PyCharm": '<img src="https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white" alt="PyCharm" />',
     "RStudio": '<img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=r&logoColor=white" alt="RStudio" />',
