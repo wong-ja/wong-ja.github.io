@@ -150,7 +150,7 @@ with tabs[1]:
         )
         st.divider()
         st.markdown("""
-        **Computer Science, B.S.** \n\n Mathematics minor \n\n Expected December 2025
+        **Computer Science, B.S.** \n\n Mathematics minor \n\n December 2025
         """)
 
     with col2:
@@ -161,14 +161,14 @@ with tabs[1]:
         st.markdown(
             f"""
             <a href="{ctp_url}" target="_blank">
-                <img src="{ctp_img}" style="max-width:300px; height:auto;" />
+                <img src="{ctp_img}" style="max-width:250px; height:auto;" />
             </a>
             """,
             unsafe_allow_html=True,
         )
         st.divider()
         st.markdown("""
-        **Data Science Fellow** \n\n Cohort 11 \n\n July 2025 - Present
+        **Data Science Fellow**, Cohort 11 \n\n July 2025 - Present
         """)
 
     with col3:
@@ -182,15 +182,32 @@ with tabs[1]:
         st.markdown(
             f"""
             <a href="{codepath_url}" target="_blank">
-                <img src="{codepath_img}" style="max-width:300px; height:auto;" />
+                <img src="{codepath_img}" style="max-width:300px; margin-bottom:25px; height:auto;" />
             </a>
             """,
             unsafe_allow_html=True,
         )
-        st.divider()
         st.markdown("""
-        [Intro to Android Development](https://drive.google.com/file/d/1UdeHKtmsAjHqIjGjB6Iolis5TndpUGar/view?usp=sharing) \n\n Summer 2025
+        [Intro to Android Development](https://drive.google.com/file/d/1UdeHKtmsAjHqIjGjB6Iolis5TndpUGar/view?usp=sharing)
+        \n\n Summer 2025
         """)
+
+        st.divider()
+        datacamp_url = "https://www.datacamp.com/"
+        datacamp_img = "https://static.otta.com/uploads/images/company-logos/861-M-FSZQYDL-ZX_ll0W9b9ORXd_co2Lwt9BlVSDxjhEtg.png"
+        st.markdown(
+            f"""
+            <a href="{datacamp_url}" target="_blank">
+                <img src="{datacamp_img}" style="max-width:300px; margin-bottom:25px; height:auto;" />
+            </a>
+            """,
+            unsafe_allow_html=True,
+        )
+        st.markdown("""
+        [Select Topics in Data Science](https://drive.google.com/drive/folders/1bWCOAhrhCl4DM_AoW-hHI2azjrM712U9?usp=sharing)
+        \n\n Spring 2025
+        """)
+
 
 
 
@@ -331,10 +348,12 @@ def image_to_base64(image_path):
 with tabs[3]:
     st.subheader("Projects")
     df = pd.read_csv("data/projects.csv", sep=";")
+    # split, strip, remove empty strs, list unique
+    tech_list = df['technologies'].str.split(',').explode().str.strip().dropna().loc[lambda x: x.str.len() > 0].unique().tolist()
 
     techs = st.multiselect(
         "Search technologies:",
-        options=list(badge_dict.keys()),
+        options=tech_list,
         default=[]
     )
     st.write("")
@@ -366,7 +385,7 @@ with tabs[3]:
                 try:
                     supp_links = json.loads(row['supplemental_links'])
                     for name, link in supp_links.items():
-                        st.markdown(f"[{name}]({link})  ")
+                        st.markdown(f"🔗 [{name}]({link})  ")
                 except json.JSONDecodeError:
                     st.write("Invalid supplemental links data.")
             # tech stack
@@ -390,7 +409,7 @@ with tabs[4]:
     spc, col, spc = st.columns([1,1,1])
     with col:
         btn = st.download_button(
-            label="Download Resume PDF",
+            label="Download Resume (PDF)",
             data=pdf_bytes,
             file_name="resume.pdf",
             mime="application/pdf",
